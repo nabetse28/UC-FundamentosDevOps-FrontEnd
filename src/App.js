@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import HeaderPeople from "./components/Header";
+import MenuExamplePointing from "./components/Menu";
+import People from "./components/People";
+import AddPeople from "./components/AddPeople";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <HeaderPeople />
+        <Router>
+          <MenuExamplePointing />
+          <Route path="/" exact render={() => <People />} />
+          <Route path="/AddPeople" exact render={() => <AddPeople />} />
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;
