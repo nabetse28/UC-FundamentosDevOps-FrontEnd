@@ -42,7 +42,10 @@ export default class People extends Component {
                   onClick={() => {
                     axios
                       .delete("http://localhost:5000/person/" + person._id)
-                      .then((res) => console.log(res))
+                      .then((res) => {
+                        console.log(res);
+                        this.fetchPeople();
+                      })
                       .catch((err) => console.log(err));
                   }}
                 >
