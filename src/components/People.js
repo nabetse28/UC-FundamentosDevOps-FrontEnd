@@ -15,9 +15,9 @@ export default class People extends Component {
   }
 
   async fetchPeople() {
-    const people = await axios.get("http://localhost:5000/api/v1/person");
-    // console.log(people);
-    this.setState({ people: people.data });
+    const people = await axios.get("http://localhost:5001/api/v1/person");
+    console.log(people);
+    this.setState({ people: people.data.data });
   }
 
   deletePerson = (id) => {
@@ -41,7 +41,7 @@ export default class People extends Component {
                   color="red"
                   onClick={() => {
                     axios
-                      .delete("http://localhost:5000/api/v1/person/" + person._id)
+                      .delete("http://localhost:5001/api/v1/person/" + person._id)
                       .then((res) => {
                         console.log(res);
                         this.fetchPeople();
