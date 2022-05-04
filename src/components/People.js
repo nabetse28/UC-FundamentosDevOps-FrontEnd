@@ -15,7 +15,7 @@ export default class People extends Component {
   }
 
   async fetchPeople() {
-    const people = await axios.get("http://localhost:5000/");
+    const people = await axios.get("http://localhost:5000/person");
     // console.log(people);
     this.setState({ people: people.data });
   }
