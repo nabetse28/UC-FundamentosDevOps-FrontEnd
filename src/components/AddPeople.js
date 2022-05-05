@@ -71,7 +71,8 @@ export default class AddPeople extends Component {
               primary
               onClick={() => {
                 axios
-                  .post("http://localhost:5001/api/v1/person", {
+                  // .post("http://localhost/api/v1/person", {
+                    .post("/api/v1" + "/person", {
                     name: this.state.name,
                     age: this.state.age,
                     description: this.state.description,
