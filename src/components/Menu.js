@@ -14,7 +14,7 @@ export default class MenuExamplePointing extends Component {
         <Menu pointing>
           <Menu.Item
             as={Link}
-            to="/"
+            to="/People"
             name="People"
             active={activeItem === "People"}
             onClick={this.handleItemClick}

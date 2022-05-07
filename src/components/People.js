@@ -16,7 +16,7 @@ export default class People extends Component {
 
   async fetchPeople() {
     // const people = await axios.get("http://localhost/api/v1" + "/person");
-    const people = await axios.get("/api/v1" + "/person");
+    const people = await axios.get("/api/v1/person").catch((err) => console.log(err));
     // console.log(people);
     this.setState({ people: people.data.data });
   }
@@ -28,7 +28,8 @@ export default class People extends Component {
   PeopleCards = () => {
     return (
       <Card.Group>
-        {this.state.people.map((person) => {
+        {
+        this.state.people.map((person) => {
           return (
             <Card key={person._id}>
               <Card.Content>
@@ -43,7 +44,7 @@ export default class People extends Component {
                   onClick={() => {
                     axios
                       // .delete("http://localhost/api/v1" + "/person/" + person._id)
-                      .delete("/api/v1" + "/person/" + person._id)
+                      .delete("/api/v1/person/" + person._id)
                       .then((res) => {
                         console.log(res);
                         this.fetchPeople();

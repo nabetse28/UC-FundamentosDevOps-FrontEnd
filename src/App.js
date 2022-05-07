@@ -12,7 +12,7 @@ class App extends React.Component {
         <HeaderPeople />
         <Router>
           <MenuExamplePointing />
-          <Route path="/" exact render={() => <People />} />
+          <Route path="/People" exact render={() => <People />} />
           <Route path="/AddPeople" exact render={() => <AddPeople />} />
         </Router>
       </div>
