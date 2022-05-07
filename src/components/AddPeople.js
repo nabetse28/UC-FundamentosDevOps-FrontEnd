@@ -79,7 +79,7 @@ export default class AddPeople extends Component {
                     background: this.state.background,
                   })
                   .then((res) => {
-                    console.log(res);
+                    // console.log(res);
                     this.setState({
                       name: "",
                       age: 0,

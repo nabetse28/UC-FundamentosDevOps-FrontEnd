@@ -47,7 +47,7 @@ export default class People extends Component {
                         // .delete("http://localhost/api/v1" + "/person/" + person._id)
                         .delete("/api/v1/person/" + person._id)
                         .then((res) => {
-                          console.log(res);
+                          // console.log(res);
                           this.fetchPeople();
                         })
                         .catch((err) => console.log(err));
