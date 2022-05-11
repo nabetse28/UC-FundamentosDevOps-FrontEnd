@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Segment, Card, Button, CardGroup } from "semantic-ui-react";
+import { Segment, Card, Button } from "semantic-ui-react";
 import axios from "axios";
 
 export default class People extends Component {
